@@ -1,0 +1,21 @@
+butterflyPos1 = _open('butterfly_pos1.jpg',20,20,0, white);
+butterflyPos2 = _open('butterfly_pos2.jpg',20,20,0, white);
+back_ground = _open('back.jpeg',1000,1000,0 ,white);
+
+page = _newPage(1000,1000);
+page =  _addImage(page,back_ground,0,0);
+
+rowPos  = 569;
+
+For i,1000,50;
+If (i%2 == 0);
+result_page = _addImage(page,butterflyPos1,rowPos,i);
+_write(200,180,pdf,result_page,i);
+Else
+result_page = _addImage(page,butterflyPos2,rowPos,i);
+_write(200,180,pdf,result_page,i);
+End;
+End;
+
+
+_pdf('output2.pdf',pdf)

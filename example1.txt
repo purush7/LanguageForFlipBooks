@@ -1,0 +1,21 @@
+
+back_ground = [247,247,247];
+
+car = _open('car.png',100,100,1, white);
+tree = _open('tree.png',250,200,0 , back_ground);
+back_ground = _open('back.jpeg',1000,1000,0 ,white);
+
+
+page = _newPage(1000,1000);
+page =  _addImage(page,back_ground,0,0);
+
+rowPos  = 569;
+page = _addImage(page,tree, rowPos,400);
+
+rowPos  = 899;
+For pgno,1000,50;
+resultPage = _addImage(page, car, rowPos, pgno);
+_write(200,180,pdf,resultPage,pgno);
+End;
+
+_pdf('output.pdf',pdf)
